@@ -17,15 +17,20 @@ const Checkout = () => {
           <strong>Amazon.ca Rewards Mastercard.</strong>
         </span>
 
-        <button>Learn more</button>
+        <a
+          href='https://www.amazon.ca/gp/product/B07MJM4F44/ref=cacbcc_maple_vc_en_unrec_acq_m?pr=concacbcc&inc=cacbccunrec&ts=4lpxmbor6nubqhsn0dsrrwxwq951r6o&plattr=math&place=vc&imp=47dfc680-8c65-407d-8067-3a1794227ccd'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          Learn more
+        </a>
       </div>
       <div className='checkout'>
         <div className='checkout__left'>
-          <h2 className='checkout__title'>Your Amazon Cart</h2>
+          <p className='checkout__title'>Your Amazon Cart</p>
         </div>
         <div className='checkout__right'>
           <Subtotal />
-          <h2>Your subtotal:</h2>
         </div>
       </div>
     </>
