@@ -1,24 +1,19 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { auth } from '../../firebase';
 import './style.css';
 
 const LogIn = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleEmail = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handlePassword = (e) => {
-    setPassword(e.target.value);
-  };
-
   const handleSignIn = (e) => {
     e.preventDefault();
+    auth.signInWithEmailAndPassword(email, password).then(() => {
+      navigate('/');
+    });
   };
-
-  const handleRegister = (e) => {};
 
   return (
     <>
@@ -34,9 +29,17 @@ const LogIn = () => {
           <h1>Sign-In</h1>
           <form>
             <h5>E-mail address:</h5>
-            <input type='text' value={email} onChange={handleEmail} />
+            <input
+              type='text'
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
             <h5>Password:</h5>
-            <input type='password' value={password} onChange={handlePassword} />
+            <input
+              type='password'
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
             <button
               type='submit'
               className='signIn__button'
@@ -48,13 +51,15 @@ const LogIn = () => {
 
           <p>
             By continuing, you agree to <span>AMAZON'S FAKE CLONE</span>{' '}
-            Conditions of Use and Privacy Notice
+            Conditions of Use and Privacy Notice.
           </p>
         </div>
         <p className='signUp__msg'>New to Amazon?</p>
-        <button className='register__button' onClick={handleRegister}>
-          Create your Amazon Account
-        </button>
+        <Link to='/register'>
+          <button className='register__button'>
+            Create your Amazon Account
+          </button>
+        </Link>
         <p className='tag'>© 2021 Amazon Fake Clone</p>
       </div>
     </>
