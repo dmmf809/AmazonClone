@@ -7,7 +7,7 @@ import CheckoutProduct from './CheckoutProduct';
 import './style.css';
 
 const Checkout = () => {
-  const [{ cart }, dispatch] = useStateValue();
+  const [{ cart }] = useStateValue();
 
   return (
     <>

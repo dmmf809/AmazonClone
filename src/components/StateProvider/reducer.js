@@ -1,5 +1,6 @@
 export const initialState = {
   cart: [],
+  user: null,
 };
 
 //Iterates through the cart and sums up the amount in the cart
@@ -34,6 +35,11 @@ const reducer = (state, action) => {
       return {
         ...state,
         cart: newCart,
+      };
+    case 'SET_USER':
+      return {
+        ...state,
+        user: action.user,
       };
     default:
       return state;
