@@ -1,8 +1,14 @@
-import React from 'react';
+import CurrencyFormat from 'react-currency-format';
+import { getCartTotal } from '../StateProvider/reducer';
+import { useStateValue } from '../StateProvider/StateProvider';
 import Subtotal from '../Subtotal/Subtotal';
+import CartIsEmpty from './CartIsEmpty';
+import CheckoutProduct from './CheckoutProduct';
 import './style.css';
 
 const Checkout = () => {
+  const [{ cart }, dispatch] = useStateValue();
+
   return (
     <>
       <div className='checkout__ad'>
@@ -26,12 +32,45 @@ const Checkout = () => {
         </a>
       </div>
       <div className='checkout'>
-        <div className='checkout__left'>
-          <p className='checkout__title'>Your Amazon Cart</p>
-        </div>
-        <div className='checkout__right'>
-          <Subtotal />
-        </div>
+        {cart.length !== 0 ? (
+          <>
+            <div className='checkout__left'>
+              <p className='checkout__title'>Your Amazon Cart</p>
+              {cart.map((item, i) => (
+                <CheckoutProduct
+                  key={i}
+                  id={item.id}
+                  title={item.title}
+                  image={item.image}
+                  rating={item.rating}
+                  price={item.price}
+                />
+              ))}
+              <CurrencyFormat
+                renderText={(value) => (
+                  <>
+                    <p className='checkout__product-subtotal'>
+                      Subtotal ({cart.length} items): <strong>{value}</strong>
+                    </p>
+                  </>
+                )}
+                decimalScale={2}
+                value={getCartTotal(cart)}
+                displayType={'text'}
+                thousandSeparator={true}
+                prefix={'$'}
+              />
+            </div>
+
+            <div className='checkout__right'>
+              <Subtotal />
+            </div>
+          </>
+        ) : (
+          <div className='checkout__left'>
+            <CartIsEmpty />
+          </div>
+        )}
       </div>
     </>
   );

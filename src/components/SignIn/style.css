@@ -1,0 +1,87 @@
+.signin {
+  height: 100vh;
+  background-color: #ffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signin__logo {
+  margin: 10px;
+  object-fit: contain;
+  width: 110px;
+  text-decoration: none;
+}
+
+.signin__container {
+  width: 300px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  border: 1px solid #dddddd;
+  padding: 20px;
+}
+
+.signin__container h1 {
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.signin__container form h5 {
+  margin-bottom: 5px;
+}
+
+.signin__container form input {
+  height: 30px;
+  margin-bottom: 10px;
+  width: 98%;
+}
+
+.signin__container p {
+  margin-top: 15px;
+  font-size: 12px;
+}
+
+.signin__container span {
+  color: #0e7bab;
+}
+
+.signIn__button {
+  border-radius: 2px;
+  width: 100%;
+  height: 30px;
+  margin-top: 10px;
+  background-color: #f0c24f;
+  border-color: #e5d4aa #f5da94 #f2ca67;
+}
+
+.signIn__button:hover {
+  cursor: pointer;
+  background-color: #d8ad41ee;
+}
+
+.signUp__msg {
+  font-size: 12px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #8d8d8d;
+}
+
+.register__button {
+  border-radius: 2px;
+  width: 290px;
+  height: 30px;
+  border-color: #dddddd;
+  cursor: pointer;
+}
+
+.register__button:hover {
+  background-color: #bbbbbb6b;
+}
+
+.tag {
+  font-size: 10px;
+  margin-top: 3%;
+  color: #424242;
+}
