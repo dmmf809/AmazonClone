@@ -17,7 +17,6 @@ function App() {
     () => {
       //onAuthStateChanged - once the app loads this useEffect is attatched
       auth.onAuthStateChanged((authUser) => {
-        console.log('THE USER IS >>>', authUser);
         if (authUser) {
           //user just logged in or was logged in
           dispatch({
