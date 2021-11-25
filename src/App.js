@@ -8,6 +8,15 @@ import Register from './components/SignIn/Register';
 import { useEffect } from 'react';
 import { auth } from './firebase';
 import { useStateValue } from './components/StateProvider/StateProvider';
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+import Footer from './components/Footer/Footer';
+import Payment from './components/Payment/Payment';
+import Orders from './components/Orders/Orders';
+
+const promise = loadStripe(
+  'pk_test_51JzTrjKC8udb4pibOQcB6JuUwafUbQeTEU5nMUi69nhyuIWZbmukZljl12IKjwDxzoBpnmB49s8LwZZaMstFBqIf00bIAWOLhL'
+);
 
 function App() {
   const [{}, dispatch] = useStateValue();
@@ -45,6 +54,7 @@ function App() {
               <>
                 <Header />
                 <Home />
+                <Footer />
               </>
             }
           ></Route>
@@ -54,10 +64,34 @@ function App() {
               <>
                 <Header />
                 <Checkout />
+                <Footer />
               </>
             }
           ></Route>
           <Route path='/signin' element={<SignIn />}></Route>
+          <Route
+            path='/payment'
+            element={
+              <>
+                <Header />
+                <Elements stripe={promise}>
+                  <Payment />
+                </Elements>
+
+                <Footer />
+              </>
+            }
+          ></Route>
+          <Route
+            path='/orders'
+            element={
+              <>
+                <Header />
+                <Orders />
+                <Footer />
+              </>
+            }
+          ></Route>
           <Route path='/register' element={<Register />}></Route>
         </Routes>
       </div>

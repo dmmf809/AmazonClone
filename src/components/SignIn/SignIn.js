@@ -10,9 +10,12 @@ const LogIn = () => {
 
   const handleSignIn = (e) => {
     e.preventDefault();
-    auth.signInWithEmailAndPassword(email, password).then(() => {
-      navigate('/');
-    });
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then(() => {
+        navigate('/');
+      })
+      .catch((error) => alert(error));
   };
 
   return (

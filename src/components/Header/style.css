@@ -78,3 +78,7 @@
   margin-top: 10px;
   color: #ff9900;
 }
+
+.header__checkout {
+  text-decoration: none;
+}
