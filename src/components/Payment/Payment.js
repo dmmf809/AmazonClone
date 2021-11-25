@@ -32,7 +32,6 @@ const Payment = () => {
     };
     getClientSecret();
   }, [cart]);
-  console.log(user);
   const handleSubmit = async (e) => {
     e.preventDefault();
     setProcessing(true);
@@ -68,7 +67,7 @@ const Payment = () => {
     //Listens for changes in the CardElement
     //and display any errors as the customer types their card details
     setDisabled(e.empty); //disables button
-    setError(e.error ? e.erroe.message : ''); //shows error or show nothing
+    setError(e.error ? e.error.message : ''); //shows error or show nothing
   };
   return (
     <>
@@ -118,10 +117,10 @@ const Payment = () => {
                   <CurrencyFormat
                     renderText={(value) => (
                       <>
-                        <p>
+                        <h3>
                           Order Total:
                           <strong>{value}</strong>
-                        </p>
+                        </h3>
                       </>
                     )}
                     decimalScale={2}

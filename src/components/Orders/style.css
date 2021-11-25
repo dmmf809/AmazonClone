@@ -1,0 +1,26 @@
+.items {
+  padding: 40px;
+  margin: 20px 0;
+  border: 1px solid #dddd;
+  background-color: #ffff;
+  position: relative;
+}
+
+.items__id {
+  position: absolute;
+  top: 40px;
+  right: 20px;
+}
+
+.order__total {
+  text-align: right;
+}
+
+/*Orders component*/
+.orders {
+  padding: 20px 80px;
+}
+
+.orders h1 {
+  margin: 30px 0;
+}

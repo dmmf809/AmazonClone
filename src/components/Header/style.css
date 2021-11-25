@@ -26,7 +26,7 @@
   height: 12px;
   padding: 10px;
   border: none;
-  width: 100%;
+  width: 95%;
 }
 
 .header__searchIcon {
@@ -40,12 +40,11 @@
   justify-content: space-evenly;
 }
 
-/*Sign in*/
-.signIn {
+.header__nav a {
   text-decoration: none;
 }
 
-.signIn:hover {
+.header__nav a:hover {
   border: 1px solid #ffff;
   white-space: nowrap;
 }

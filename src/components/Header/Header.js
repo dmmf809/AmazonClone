@@ -30,7 +30,7 @@ const Header = () => {
         </div>
         <div className='header__nav'>
           {/*If there is no user logged in, redirect to the sign-in page */}
-          <Link to={!user && '/signin'} className='signIn'>
+          <Link to={!user && '/signin'}>
             <div onClick={handleSignOut} className='header__option'>
               <span className='header__optionLineOne'>
                 Hello, {user ? user.displayName : `Guest`}
@@ -40,12 +40,14 @@ const Header = () => {
               </span>
             </div>
           </Link>
-          <div className='header__option'>
-            <span className='header__optionLineOne'>Returns</span>
-            <span className='header__optionLineTwo'>&amp; Orders</span>
-          </div>
+          <Link to='/orders'>
+            <div className='header__option'>
+              <span className='header__optionLineOne'>Returns</span>
+              <span className='header__optionLineTwo'>&amp; Orders</span>
+            </div>
+          </Link>
         </div>
-        <Link to='/checkout' className='header__checkout'>
+        <Link to='/checkout'>
           <div className='header__optionCart'>
             <ShoppingCartOutlinedIcon />
             <span className='header__optionLineTwo header__cartCount'>
