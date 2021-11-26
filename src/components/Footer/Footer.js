@@ -23,7 +23,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className='footer__heading'>
-            <h3>Make Money ith Us</h3>
+            <h3>Make Money With Us</h3>
             <ul>
               <li>Sell on Amazon</li>
               <li>Amazon Associates</li>
@@ -63,6 +63,7 @@ const Footer = () => {
           <img
             className='footer__logo'
             src={process.env.PUBLIC_URL + '/assets/amazon-logo.png'}
+            alt='Amazon'
           />
           <div className='footer__language'>
             <LanguageIcon className='footer__icon' /> <span>English</span>

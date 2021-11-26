@@ -1,5 +1,7 @@
 import { useStateValue } from '../StateProvider/StateProvider';
 import './style.css';
+import { toast, Slide, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Products({ id, title, image, price, rating }) {
   const [{ cart }, dispatch] = useStateValue();
@@ -15,11 +17,22 @@ function Products({ id, title, image, price, rating }) {
         rating: rating,
       },
     });
+
+    toast(`Item added to Amazon Cart!`, {
+      className: 'custom-notif',
+      draggable: false,
+      position: toast.POSITION.TOP_RIGHT,
+      autoClose: 5000,
+      pauseOnHover: false,
+      closeOnClick: false,
+      pauseOnFocusLoss: false,
+    });
   };
 
   return (
     <>
       <div className='product'>
+        <ToastContainer newestOnTop transition={Slide} />
         <div className='product__info'>
           <p>{title}</p>
           <p className='product__price'>
@@ -34,7 +47,7 @@ function Products({ id, title, image, price, rating }) {
               ))}
           </div>
         </div>
-        <img src={image} alt={title} />
+        <img className='product__img' src={image} alt={title} />
         <button onClick={addToCart}>Add to Cart</button>
       </div>
     </>

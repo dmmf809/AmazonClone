@@ -47,7 +47,7 @@ const Header = () => {
             </div>
           </Link>
         </div>
-        <Link to='/checkout'>
+        <Link to='/checkout' className='header__checkout'>
           <div className='header__optionCart'>
             <ShoppingCartOutlinedIcon />
             <span className='header__optionLineTwo header__cartCount'>

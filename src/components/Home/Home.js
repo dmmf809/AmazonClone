@@ -1,16 +1,35 @@
 import Products from '../Products/Products';
 import './style.css';
+import Carousel from 'react-bootstrap/Carousel';
 
 const Home = () => {
   return (
     <>
       <div className='home'>
         <div className='home__container'>
-          <img
-            src={process.env.PUBLIC_URL + '/assets/amazon-banner.jpg'}
-            alt='Home Banner'
-            className='home__image'
-          />
+          <Carousel interval={4000} indicators={false}>
+            <Carousel.Item>
+              <img
+                src={process.env.PUBLIC_URL + '/assets/amazon-banner.jpg'}
+                alt='Home Banner'
+                className='d-block w-100 home__image'
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                src={process.env.PUBLIC_URL + '/assets/amazon-banner2.jpg'}
+                alt='Home Banner'
+                className='home__image'
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                src={process.env.PUBLIC_URL + '/assets/amazon-banner3.jpg'}
+                alt='Home Banner'
+                className='home__image'
+              />
+            </Carousel.Item>
+          </Carousel>
           <div className='home__row'>
             <Products
               id='haMeKsA4L'
