@@ -28,8 +28,16 @@
   border-bottom: 1px solid #dddd;
 }
 
+.payment__section p {
+  margin-bottom: 0;
+}
+
 .payment__title {
   flex: 0.2;
+}
+
+.payment__title h3 {
+  font-size: 20px;
 }
 
 .payment__address,
@@ -44,6 +52,7 @@
 
 .payment__details h3 {
   text-align: center;
+  margin-top: 5px;
 }
 
 .payment__details form div button {
@@ -55,4 +64,17 @@
   margin-top: 10px;
   cursor: pointer;
   box-shadow: 1px 1px 2px #999;
+}
+
+.payment__price-container h3 {
+  font-size: 15px;
+}
+
+.payment__price-container span {
+  font-size: 16px;
+}
+
+.payment__details p {
+  font-size: 12px;
+  padding-bottom: 10px;
 }

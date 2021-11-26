@@ -112,6 +112,11 @@ const Payment = () => {
             <div className='payment__details'>
               {/*Stripe wil go here*/}
               <form onSubmit={handleSubmit}>
+                <p>
+                  Only use the following for transaction to be completed <br />
+                  (Card number: 4242 4242 4242 4242 MM/YY: 02 / 42 CVC: 424 ZIP:
+                  24242)
+                </p>
                 <CardElement onChange={handleChange} />
                 <div className='payment__price-container'>
                   <CurrencyFormat

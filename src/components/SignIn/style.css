@@ -30,6 +30,7 @@
 
 .signin__container form h5 {
   margin-bottom: 5px;
+  font-size: 15px;
 }
 
 .signin__container form input {

@@ -36,9 +36,17 @@ const Orders = () => {
           navigate('/signin')
         ) : (
           <div className='orders__items'>
-            {orders?.map((items, i) => (
-              <Items key={i} items={items} />
-            ))}
+            {orders.length === 0 ? (
+              <div className='orders__empty'>
+                <img
+                  src={process.env.PUBLIC_URL + '/assets/empty-cart.svg'}
+                  alt='Amazon Orders is empty'
+                />
+                <h3>No orders yet...</h3>
+              </div>
+            ) : (
+              orders?.map((items, i) => <Items key={i} items={items} />)
+            )}
           </div>
         )}
       </div>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useStateValue } from '../StateProvider/StateProvider';
 import './style.css';
 
@@ -22,10 +23,14 @@ const CartIsEmpty = () => {
               <p>Your Amazon Cart is empty</p>
               <a href='/'>Shop today's deals</a>
               <br />
-              <button className='checkout__signIn'>
-                Sign in to your account
-              </button>
-              <button className='checkout__signUp'>Sign up now</button>
+              <Link to='/signin'>
+                <button className='checkout__signIn'>
+                  Sign in to your account
+                </button>
+              </Link>
+              <Link to='/register'>
+                <button className='checkout__signUp'>Sign up now</button>
+              </Link>
             </>
           )}
         </div>
