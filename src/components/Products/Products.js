@@ -17,14 +17,13 @@ function Products({ id, title, image, price, rating }) {
         rating: rating,
       },
     });
-
     toast(`Item added to Amazon Cart!`, {
-      className: 'custom-notif',
       draggable: false,
       position: toast.POSITION.TOP_RIGHT,
-      autoClose: 5000,
+      autoClose: 4000,
       pauseOnHover: false,
       closeOnClick: false,
+      closeButton: false,
       pauseOnFocusLoss: false,
     });
   };
@@ -32,7 +31,8 @@ function Products({ id, title, image, price, rating }) {
   return (
     <>
       <div className='product'>
-        <ToastContainer newestOnTop transition={Slide} />
+        <ToastContainer transition={Slide} />
+
         <div className='product__info'>
           <p>{title}</p>
           <p className='product__price'>
